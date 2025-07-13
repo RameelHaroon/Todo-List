@@ -1,0 +1,28 @@
+body{
+    padding: 0px;
+    margin: 0px;
+
+}
+
+h2{
+    color: #2B2D42;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+}
+
+#left-panel{
+    background-color: #F8F9FA;
+    border-right: 5px solid #FADBD8;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#right-panel{
+    background-color: #d1d6dc;
+}
