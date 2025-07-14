@@ -7,14 +7,24 @@ h3:hover {
   color: #940d3a;
 }
 
-.bin-icon{
-    width: 10px;
-    height: 10px;
+.icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 20px;
+  width: 50px;
 }
 
-.bin-icon:hover{
-    width: 12px;
-    height: 12px;
+.bin-icon, .add-icon {
+    width: 15px;
+    height: 15px;
+    transition: transform 0.1s ease;
+}
+
+.bin-icon:hover,
+.add-icon:hover {
+    transform: scale(1.2);
 }
 
 .project-list{

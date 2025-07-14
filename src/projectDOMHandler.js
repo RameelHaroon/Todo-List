@@ -1,5 +1,6 @@
 import "./css/projectDOMHandler.css";
 import binImage from "./images/bin.png";
+import addImage from "./images/add.png";
 
 export function renderProjects(parentDOMElement, projectList) {
   console.log(`Rendering ${projectList.length} project(s)`);
@@ -20,6 +21,9 @@ export function renderProjects(parentDOMElement, projectList) {
     const title = document.createElement("h3");
     title.textContent = project.name;
 
+    const iconsDiv = document.createElement("div");
+    iconsDiv.classList.add("icons");
+
     const binImg = document.createElement("img");
     binImg.classList.add("bin-icon");
     binImg.src = binImage;
@@ -28,11 +32,12 @@ export function renderProjects(parentDOMElement, projectList) {
 
     const addImg = document.createElement("img");
     addImg.classList.add("add-icon");
-    addImg.src = binImage;
+    addImg.src = addImage;
     addImg.alt = "Add-icon";
     addImg.dataset.projectId = project.projectId;
 
-    projectDiv.append(title, binImg);
+    iconsDiv.append(addImg, binImg);
+    projectDiv.append(title, iconsDiv);
     return projectDiv;
   }
 
