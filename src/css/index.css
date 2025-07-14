@@ -26,3 +26,12 @@ h2{
 #right-panel{
     background-color: #d1d6dc;
 }
+
+#add-project-btn{
+    width: 80px;
+    padding: 5px;
+    color: white;
+    background-color: #cf396b;
+    border:none;
+    border-radius: 10px;
+}

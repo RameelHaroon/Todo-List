@@ -4,6 +4,8 @@ import "./css/index.css";
 
 // === Setup ===
 const leftPanel = document.querySelector("#left-panel");
+const rightPanel = document.querySelector("#right-panel");
+const addProjectBtn = document.querySelector("#add-project-btn");
 const manager = ProjectManager();
 
 const projectContainerDiv = createProjectContainer();
@@ -55,3 +57,8 @@ function handleClick(event) {
 
 // === Event Listener ===
 document.addEventListener("click", handleClick);
+
+addProjectBtn.addEventListener("click", () => {
+  console.log("Add project event called");
+  //manager.addProject();
+});
