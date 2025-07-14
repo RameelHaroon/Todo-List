@@ -12,21 +12,34 @@ export const ProjectManager = (() => {
       return project;
     }
 
-    function addTodoItem(title, description, dueDate, priority, selectedProjectId) {
-      const newTodoItem = new TodoItem(title, description, dueDate, priority, selectedProjectId);
-      const project = projects.find(p => p.projectId === selectedProjectId);
+    function addTodoItem(
+      title,
+      description,
+      dueDate,
+      priority,
+      selectedProjectId
+    ) {
+      const newTodoItem = new TodoItem(
+        title,
+        description,
+        dueDate,
+        priority,
+        selectedProjectId
+      );
+      const project = projects.find((p) => p.projectId === selectedProjectId);
       if (project) {
         project.addTodo(newTodoItem);
       }
     }
 
     function deleteProject(projectId) {
-      projects = projects.filter(p => p.projectId !== projectId);
+      projects = projects.filter((p) => p.projectId !== projectId);
       selectedProject = projects.length > 0 ? projects[0] : null;
     }
 
-    function selectProject(index) {
-      selectedProject = projects[index];
+    function selectProject(project) {
+      console.log(`Selecting project with ID: ${project.projectId}`);
+      selectedProject = project;
     }
 
     function getSelectedProject() {
@@ -43,7 +56,6 @@ export const ProjectManager = (() => {
 
     defaultProject = addProject("Rameel");
     selectedProject = defaultProject;
-
 
     return {
       addProject,

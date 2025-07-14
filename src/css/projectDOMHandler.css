@@ -35,3 +35,8 @@ h3:hover {
     justify-content: space-between;
     align-items: center;
 }
+
+.project.selected {
+  background-color: #f0f0f0; /* Or any highlight color */
+  border-left: 4px solid #d62560;
+}

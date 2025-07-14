@@ -13,6 +13,7 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/template.html"],
+    port: 3000,
   },
   plugins: [
     new HtmlWebpackPlugin({
