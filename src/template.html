@@ -9,7 +9,18 @@
     <div class="container">
       <div id="left-panel">
         <h2>Projects</h2>
-        <div><button id="add-project-btn">Add</button></div>
+        <div><button class="btn" id="add-project-btn">Add</button></div>
+        <dialog id="modal">
+          <form method="post" id="form">
+            <legend id="form-legend">New Project!</legend>
+            <div class="inputField">
+              <label for="projectName">Project Name</label>
+              <input type="text" id="projectName" name="projectName" required />
+            </div>
+            <input type="submit" value="SUBMIT" id="submit-btn" />
+          </form>
+          <button id="close-btn">CANCEL</button>
+        </dialog>
       </div>
       <div id="right-panel"></div>
     </div>

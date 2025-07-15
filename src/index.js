@@ -6,6 +6,9 @@ import "./css/index.css";
 const leftPanel = document.querySelector("#left-panel");
 const rightPanel = document.querySelector("#right-panel");
 const addProjectBtn = document.querySelector("#add-project-btn");
+const closeBtn = document.querySelector("#close-btn");
+const modal = document.querySelector("#modal");
+const form = document.getElementById("form");
 const manager = ProjectManager();
 
 const projectContainerDiv = createProjectContainer();
@@ -36,8 +39,6 @@ function handleClick(event) {
     manager.deleteProject(projectId);
     renderPage();
   } else if (target.closest(".project")) {
-    // You can call a selectProject(id) here if needed
-
     const clickedProject = target.closest(".project");
 
     // Remove existing selection
@@ -58,7 +59,20 @@ function handleClick(event) {
 // === Event Listener ===
 document.addEventListener("click", handleClick);
 
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  manager.addProject(document.querySelector("#projectName").value);
+  document.querySelector("#projectName").value = "";
+  renderPage();
+  modal.close();
+});
+
 addProjectBtn.addEventListener("click", () => {
-  console.log("Add project event called");
-  //manager.addProject();
+  console.log("Showing Modal");
+  modal.show();
+});
+
+closeBtn.addEventListener("click", () => {
+  console.log("Closing Modal");
+  modal.close();
 });

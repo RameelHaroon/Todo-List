@@ -54,9 +54,6 @@ export const ProjectManager = (() => {
     let defaultProject = addProject("Default Project");
     selectedProject = defaultProject;
 
-    defaultProject = addProject("Rameel");
-    selectedProject = defaultProject;
-
     return {
       addProject,
       addTodoItem,
