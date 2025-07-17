@@ -7,8 +7,12 @@ const leftPanel = document.querySelector("#left-panel");
 const rightPanel = document.querySelector("#right-panel");
 const addProjectBtn = document.querySelector("#add-project-btn");
 const closeBtn = document.querySelector("#close-btn");
+const todoCloseBtn = document.querySelector("#todo-close-btn");
 const modal = document.querySelector("#modal");
+const todoModal = document.querySelector("#todo-modal");
+const addTodobtn = document.querySelector(".add-icon");
 const form = document.getElementById("form");
+const todoForm = document.getElementById("todo-form");
 const manager = ProjectManager();
 
 const projectContainerDiv = createProjectContainer();
@@ -38,6 +42,10 @@ function handleClick(event) {
     console.log(`Delete project with ID: ${projectId}`);
     manager.deleteProject(projectId);
     renderPage();
+  } else if (target.classList.contains("add-icon")) {
+    const projectId = target.dataset.projectId;
+    console.log(`Adding todo for project with ID: ${projectId}`);
+    todoModal.show();
   } else if (target.closest(".project")) {
     const clickedProject = target.closest(".project");
 
@@ -67,6 +75,11 @@ form.addEventListener("submit", function (e) {
   modal.close();
 });
 
+todoForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  todoModal.close();
+});
+
 addProjectBtn.addEventListener("click", () => {
   console.log("Showing Modal");
   modal.show();
@@ -75,4 +88,8 @@ addProjectBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   console.log("Closing Modal");
   modal.close();
+});
+
+todoCloseBtn.addEventListener("click", () => {
+  todoModal.close();
 });

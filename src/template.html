@@ -17,12 +17,53 @@
               <label for="projectName">Project Name</label>
               <input type="text" id="projectName" name="projectName" required />
             </div>
-            <input type="submit" value="SUBMIT" id="submit-btn" />
+            <div class="form-btns">
+              <input type="submit" value="SUBMIT" id="submit-btn" />
+              <button id="close-btn">CANCEL</button>
+            </div>
           </form>
-          <button id="close-btn">CANCEL</button>
         </dialog>
       </div>
-      <div id="right-panel"></div>
+      <div id="right-panel">
+        <dialog id="todo-modal">
+          <form method="post" id="todo-form">
+            <legend id="form-legend">New Todo!</legend>
+            <div class="inputField">
+              <label for="todo">Title</label>
+              <input type="text" id="todo" name="todo" required />
+            </div>
+            <div class="inputField">
+              <label for="todo">Description</label>
+              <input type="text" id="todo" name="todo" required />
+            </div>
+            <div class="inputField">
+              <label for="todo">Due Date</label>
+              <input type="date" id="todo" name="todo" required />
+            </div>
+            <div class="inputField">
+              <label>Priority</label>
+              <div>
+                <label>
+                  <input type="radio" name="priority" value="P1" required />
+                  P1
+                </label>
+                <label>
+                  <input type="radio" name="priority" value="P2" />
+                  P2
+                </label>
+                <label>
+                  <input type="radio" name="priority" value="P3" />
+                  P3
+                </label>
+              </div>
+            </div>
+            <div class="form-btns">
+              <input type="submit" value="SUBMIT" id="todo-submit-btn" />
+              <button id="todo-close-btn">CANCEL</button>
+            </div>
+          </form>
+        </dialog>
+      </div>
     </div>
   </body>
 </html>

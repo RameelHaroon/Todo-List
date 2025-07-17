@@ -62,7 +62,7 @@ dialog[open] {
   align-items: center;
 }
 
-button, #submit-btn {
+button, #submit-btn, #todo-submit-btn {
   width: 100px;
   height: 30px;
   background-color: #d34272; /* matches the Add button */
@@ -73,7 +73,7 @@ button, #submit-btn {
   cursor: pointer;
 }
 
-button:hover, #submit-btn:hover {
+button:hover, #submit-btn:hover, #todo-submit-btn:hover{
   background-color: #b9305d; /* optional darker hover effect */
 }
 
@@ -90,12 +90,12 @@ button:hover, #submit-btn:hover {
   align-items: center;
 }
 
-#form{
+#form, #todo-form{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 5px;
 }
 
@@ -112,4 +112,9 @@ input{
 
 #form-legend{
     font-size: 20px;
+}
+
+.form-btns{
+  display: flex;
+  gap: 5px;
 }
